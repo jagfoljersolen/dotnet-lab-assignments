@@ -1,0 +1,13 @@
+@model int
+@{
+	int maxStars = 5;
+	int emptyStars = maxStars - Model;
+}
+@for (int i = 0; i < Model; i++)
+{
+@Html.Raw("&#x2605;")
+}
+@for (int i = 0; i < emptyStars; i++)
+{
+@Html.Raw("&#x2606;")
+}

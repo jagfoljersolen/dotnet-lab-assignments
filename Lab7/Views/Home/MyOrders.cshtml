@@ -1,0 +1,59 @@
+@model IEnumerable<Lab7.Models.Invoice>
+
+@{
+    ViewData["Title"] = "MyOrders";
+}
+
+<h1>MyOrders</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceId)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BillingAddress)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.ActionLink(item.InvoiceId.ToString(), "OrderDetails", new {id = item.InvoiceId})
+            </td>
+            
+            <td>
+                @item.InvoiceDate.ToShortDateString()
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillingAddress)
+            
+                @Html.DisplayFor(modelItem => item.BillingCity)
+            
+                @Html.DisplayFor(modelItem => item.BillingState)
+            
+                @Html.DisplayFor(modelItem => item.BillingCountry)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "OrderDetails", new {id = item.InvoiceId})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

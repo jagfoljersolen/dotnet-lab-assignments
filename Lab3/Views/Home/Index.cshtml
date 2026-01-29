@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>@DateTime.Now.ToString("ddd, d MMMMM yyyy")</p>
+    @{
+        var randomValue = ViewData["random"] as double?;
+        var bgColor = (randomValue.HasValue && randomValue > 0.5) ? "red" : "black";
+    }
+
+    <p style="background: @bgColor">
+        @randomValue
+    </p>
+</div>
