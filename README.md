@@ -1,6 +1,5 @@
 | Lab | Topic |
 |-----|-------|
-| Lab 1 | Console application with OOP |
 | Lab 2 | Data processing with LINQ |
 | Lab 3 | MVC web application |
 | Lab 4 | Razor Pages application |
